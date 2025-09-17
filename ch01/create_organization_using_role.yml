@@ -6,7 +6,7 @@
   vars:
     controller_hostname: controller.node/
     controller_username: admin
-    controller_password: secret123
+    controller_password: Proteu690201
     controller_validate_certs: false
     controller_organizations:
       - name: Satellite
