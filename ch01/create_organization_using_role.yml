@@ -3,17 +3,22 @@
   hosts: localhost
   gather_facts: false
   connection: local
+
   vars:
-    controller_hostname: controller.node/
-    controller_username: admin
-    controller_password: Proteu690201
+    controller_hostname: "https://aap.lab.local/"   # ajuste conforme seu ambiente
+    controller_username: "admin"
+    controller_password: "Proteu690201"
     controller_validate_certs: false
+
     controller_organizations:
-      - name: Satellite
+      - name: Satellite-2
       - name: Default
+
   collections:
     - awx.awx
     - redhat_cop.controller_configuration
-  roles:
-    - organizations
-...
+
+  tasks:
+    - name: Ensure organizations exist in Controller
+      include_role:
+        name: redhat_cop.controller_configuration.organizations
