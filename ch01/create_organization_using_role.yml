@@ -19,5 +19,5 @@
 
   tasks:
     - name: Ensure organizations exist in Controller
-      ansible.builtin.include_role:
+      import_role:
         name: controller_configuration.organizations
