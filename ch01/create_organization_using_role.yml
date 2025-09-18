@@ -5,13 +5,12 @@
   connection: local
 
   vars:
-    controller_hostname: "https://aap.lab.local/"   # ajuste conforme seu ambiente
-    controller_username: "admin"
-    controller_password: "Proteu690201"
+    controller_hostname: "https://aap.lab.local/"
+    controller_username: admin
+    controller_password: Proteu690201
     controller_validate_certs: false
-
     controller_organizations:
-      - name: Satellite-2
+      - name: Satellite
       - name: Default
 
   collections:
@@ -20,5 +19,5 @@
 
   tasks:
     - name: Ensure organizations exist in Controller
-      include_role:
-        name: redhat_cop.controller_configuration.organizations
+      ansible.builtin.include_role:
+        name: controller_configuration.organizations
